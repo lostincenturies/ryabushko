@@ -4,7 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ИДЗ-1.1</title>
-<link rel="stylesheet" href="style.css">
+<style>
+  .russian-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+.russian-list li {
+  margin-bottom: 10px;
+  padding-left: 25px;
+  position: relative;
+}
+.russian-list li:nth-child(1)::before { content: "а) "; }
+.russian-list li:nth-child(2)::before { content: "б) "; }
+.russian-list li:nth-child(3)::before { content: "в) "; }
+
+td {text-align: center;}
+
+body {margin: 2%;}
+
+h1, h2 {text-align: center;}
+</style>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
 </head>
 <body>
