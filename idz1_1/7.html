@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ИДЗ-1.1 Задача 1.7.</title>
+<link rel="stylesheet" href="style.css">
+  <!-- Подключаем MathJax с официального CDN (автоматически обновляется) -->
+  <script async id="MathJax-script"
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+<div class="slim-rave"></div><br>
+
+<div class="us">\(\mathbf{1.7.} \quad \begin{matrix}\begin{vmatrix}\mathbf{2}&\mathbf{-1}&\mathbf{2}&\mathbf{0}\\\mathbf{3}&\mathbf{4}&\mathbf{1}&\mathbf{2}\\\mathbf{2}&\mathbf{-1}&\mathbf{0}&\mathbf{1}\\\mathbf{1}&\mathbf{2}&\mathbf{3}&\mathbf{-2}\end{vmatrix}\\\mathbf{i=2,} \; \mathbf{j=3.}\end{matrix}\)
+</div>
+<p>\(M_{22}=\begin{vmatrix}2&2&0\\2&0&1\\1&3&-2\end{vmatrix}\begin{matrix}I:2\\ \;\\ \;\end{matrix}\sim \)\(2\cdot\begin{matrix}\begin{vmatrix}1&1&0\\2&0&1\\1&3&-2\end{vmatrix}\\II-I\end{matrix}\sim \)\(2\cdot\begin{vmatrix}1&0&0\\2&-2&1\\1&2&-2\end{vmatrix}= \)\(2\cdot\begin{vmatrix}-2&1\\2&-2\end{vmatrix}\begin{matrix}\;\\II+I\end{matrix}\sim \)\(2\cdot\begin{vmatrix}-2&1\\0&-1\end{vmatrix}=\)\(2\cdot(-2)\cdot(-1)=4,\)</p>
+<p>\(M_{33}=\begin{matrix}\begin{vmatrix}2&-1&0\\3&4&2\\1&2&-2\end{vmatrix}\\I+2\cdot II\end{matrix}\sim \)\(\begin{vmatrix}0&-1&0\\11&4&2\\5&2&-2\end{vmatrix}= \)\(-(-1)\cdot\begin{vmatrix}11&2\\5&-2\end{vmatrix}= \)\(1\cdot(11\cdot(-2)-2\cdot5)= \)\(-22-10=-32;\)
+</p>
+<p>\(A_{22}=(-1)^{2+2}\cdot M_{22}=1\cdot4=4,\)</p>
+<p>\(A_{33}=(-1)^{3+3}\cdot M_{33}=1\cdot(-32)=-32.\)</p><br><br>
+
+<p><span class="bukva">а)</span>&nbsp;&nbsp; Вычислим определитель, разложив его по элементам второй строки: \(\Delta=a_{21}\cdot A_{21}+a_{22}\cdot A_{22}+a_{23}\cdot A_{23}+a_{24}\cdot A_{24};\)</p>
+<p>\(A_{21}=(-1)^{2+1}\cdot\begin{matrix}\begin{vmatrix}-1&2&0\\-1&0&1\\2&3&-2\end{vmatrix}\\I+III\end{matrix}=\)\(-1\cdot\begin{vmatrix}-1&2&0\\0&0&1\\0&3&-2\end{vmatrix}=\)\(-1\cdot(-1)\cdot\begin{vmatrix}0&1\\3&-2\end{vmatrix}\begin{matrix}II\updownarrow I\end{matrix}\sim \)\(-(-1\cdot(-1))\cdot\begin{matrix}3&-2\\0&1\end{matrix}=\)\(-(3\cdot1)=-3, \)</p>
+<p>ранее найдено: \(A_{22}=4,\)</p>
+<p>\(A_{23}=(-1)^{2+3}\cdot\begin{matrix}\begin{vmatrix}2&-1&0\\2&-1&1\\1&2&-2\end{vmatrix}\\II+III\end{matrix}\sim \)\(-1\cdot\begin{vmatrix}2&-1&0\\2&0&1\\1&0&-2\end{vmatrix}=\)\(-(-1)\cdot(-1)\cdot\begin{vmatrix}2&1\\1&-2\end{vmatrix}=\)\(-(2\cdot(-2)-1\cdot1)=\)\(-(-4-1)=5,\)</p>
+<p>\(A_{24}=(-1)^{2+4}\cdot\begin{vmatrix}2&-1&2\\2&-1&0\\1&2&3\end{vmatrix}=\)\(1\cdot(2\cdot(-1)\cdot3+2\cdot2\cdot2+\)\(1\cdot(-1)\cdot1-2\cdot0\cdot2-\)\(3\cdot(-1)\cdot2)=\)\(-6+8+0+2-0+6=\)\(10;\)</p>
+<p>\(\Delta=3\cdot(-3)+4\cdot4+1\cdot5+2\cdot10=\)\(-9+16+5+20=\)\(32.\)</p><br><br>
+<p><span class="bukva">б)</span>&nbsp;&nbsp; Вычислим определитель, разложив его по элементам третьего столбца: \(\Delta=a_{13}\cdot A_{13}+a_{23}\cdot A_{23}+a_{33}\cdot A_{33}+a_{43}\cdot A_{43};\)
+</p>
+<p>\(A_{13}=(-1)^{1+3}\cdot\begin{matrix}\begin{vmatrix}3&4&2\\2&-1&1\\1&2&-2\end{vmatrix}\\II+III\end{matrix}\sim \)\(1\cdot\begin{vmatrix}3&6&2\\2&0&1\\1&0&-2\end{vmatrix}\begin{matrix}I:6\end{matrix}\sim \)\(6\sim\begin{vmatrix}1/2&1&1/3\\2&0&1\\1&0&-2\end{vmatrix}=\)\(-6\cdot\begin{vmatrix}2&1\\1&-2\end{vmatrix}=\)\(-6\cdot(2\cdot(-2)-1\cdot1)=\)\(-6\cdot(-4-1)=\)\(-6\cdot(-5)=30, \)</p>
+<p>ранее найдено: \(A_{23}=5,\)</p>
+<p>ранее найдено: \(A_{33}=-32,\)</p>
+<p>\(A_{43}=(-1)^{4+3}\cdot\begin{matrix}\begin{vmatrix}2&-1&0\\3&4&2\\2&-1&1\end{vmatrix}\\I+2\cdot II\end{matrix}\sim \)\(-1\cdot\begin{vmatrix}0&-1&0\\11&4&2\\0&-1&1\end{vmatrix}\begin{matrix}\;\\II:11\\ \;\end{matrix}\sim \)\(-1\cdot11\cdot\begin{vmatrix}0&-1&0\\1&4/11&2/11\\0&-1&1\end{vmatrix}=\)\(-11\cdot(-1)\cdot\begin{vmatrix}-1&0\\-1&1\end{vmatrix}=\)\(11\cdot(-1\cdot1-0\cdot(-1))=\)\(11\cdot(-1)=-11; \)</p>
+<p>\(\Delta=2\cdot30+1\cdot5+\)\(0\cdot(-32)+3\cdot(-11)=\)\(60+5+0-33=32.\)</p><br><br>
+
+<p><span class="bukva">в)</span>&nbsp;&nbsp; Вычислим определитель, получив предварительно нули во второй строке:</p>
+<p>\(\begin{matrix}\begin{vmatrix}2&-1&2&0\\3&4&1&2\\2&-1&0&1\\1&2&3&-2\end{vmatrix}\\I-3\cdot III\\II-4\cdot III\\IV-2\cdot III\end{matrix}\sim \)\(\begin{vmatrix}-4&-9&2&-4\\0&0&1&0\\2&-1&0&1\\-8&-10&3&-8\end{vmatrix}=\)\(-1\cdot\begin{matrix}\begin{vmatrix}-4&-9&-4\\2&-1&1\\-8&-10&-8\end{vmatrix}\\I:(-2)\end{matrix}\sim \)\(-1\cdot(-2)\cdot\begin{matrix}\begin{vmatrix}2&-9&-4\\-1&-1&1\\4&-10&-8\end{vmatrix}\\II-I\\III+I\end{matrix}\sim \)\(2\cdot\begin{vmatrix}2&-11&-2\\-1&0&0\\4&-14&-4\end{vmatrix}=\)\(-(2\cdot(-1))\cdot\begin{vmatrix}-11&-2\\-14&-4\end{vmatrix}=\)\(2\cdot(-11\cdot(-4)-(-2)\cdot(-14))=\)\(2\cdot(44-28)=\)\(2\cdot16=32.\)</p>
+<p></p>
+<p></p>
+
+
+<!--
+
+\begin{matrix}\end{matrix}
+\begin{vmatrix}\end{vmatrix}
+\begin{matrix}\begin{vmatrix}\end{vmatrix}\end{matrix}
+\)\(
+\cdot
+A_{}=(-1)^{}\cdot M_{}=
+<span class="bukva">а)</span>
+<span class="bukva">б)</span>
+<span class="bukva">в)</span>
+
+-->
+
+
+
+
+<br><br>
+<div class="otv">Ответ: \(\quad M_{22}=4, \; M_{33}=-32;\)\( \quad A_{22}=4, \; A_{33}=-32;\)\( \quad \Delta=32.\)</div>
+<br><br><br>
+<div class="slim-rave"></div><br><br>
+<div class="center"><a href="../idz1_1.html">Вернуться к ИДЗ-1.1</a></div>
+<br><br>
+<div class="center"><a href="../index.html">Вернуться к оглавлению</a></div>
+<br><br>
+</body>
+</html>
+
