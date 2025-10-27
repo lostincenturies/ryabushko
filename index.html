@@ -5,20 +5,131 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Содержание</title>
 <style>
-body {margin: 3%;}
-h1, h2 {text-align: center;}
-a {font-weight: bold; font-size: larger;}
+/* Бегущая радужная полоска */
+.rainbow-line {
+    height: 4px;
+    background: linear-gradient(90deg,
+        #ff0000, #ff4500, #ffa500, 
+        #ffff00, #7fff00, #00ff00,
+        #00ffff, #00bfff, #0000ff,
+        #8000ff, #ff00ff, #ff1493
+    );
+    background-size: 400% 100%;
+    margin: 20px 0;
+    border-radius: 2px;
+    animation: running-rainbow 3s linear infinite;
+    box-shadow: 
+        0 0 10px #fff,
+        0 0 20px #ff00ff,
+        0 0 30px #00ffff;
+}
+
+@keyframes running-rainbow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 400% 50%; }
+}
+
+/* Ссылки */
+a {
+    color: #00BFFF;
+    text-decoration: underline;
+    text-decoration-color: #00BFFF;
+    text-decoration-thickness: 2px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #FF6347;
+    text-shadow: 0 0 10px #FF6347;
+}
+
+/* Основные стили */
+body {
+    width: 70%;
+    margin: 3% auto 5% auto;
+    background: #202020;
+    color: #fffacd;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.8em;
+    color: #00FF00;
+    text-shadow: 
+        0 0 10px #00FF00,
+        0 0 20px #32CD32,
+        0 0 30px #008000;
+    animation: title-glow 3s ease-in-out infinite alternate;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #FFD700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    margin: 30px 0 20px 0;
+}
+
+h3 {
+    text-align: center;
+    font-size: 1.5em;
+    color: #00BFFF;
+    margin: 25px 0 15px 0;
+}
+
+@keyframes title-glow {
+    from {
+        text-shadow: 0 0 10px #00FF00, 0 0 20px #32CD32, 0 0 30px #008000;
+    }
+    to {
+        text-shadow: 0 0 15px #00FF00, 0 0 25px #32CD32, 0 0 35px #008000;
+    }
+}
+
+.center { 
+    width: 100%; 
+    text-align: center; 
+    font-weight: bold; 
+    font-size: 110%; 
+}
+
+.editor-info, .author-info {
+    text-align: center;
+    font-style: italic;
+    color: #FFD700;
+    font-size: 110%;
+    margin: 10px 0;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+}
+
+.idz-link {
+    font-size: 1.5em;
+    text-align: center;
+    margin: 20px 0;
+}
 </style>
 </head>
 <body>
-<h1>Сборник индивидуальных домашних заданий по высшей математике</h1>
-<p style="text-align: center; font-style: italic;">Под общей редакцией доктора физико-математических наук, профессора А.П. Рябушко</p>
-<p style="text-align: center; font-style: italic;">Решил Никулин Александр.</p>
-<h2>Часть 1</h2>
-<h3>ИДЗ №:</h3>
-  <div style="display: flex; flex-wrap: wrap; gap: 30px;">
-<a href="idz1_1.html">1.1</a>
-  </div>
+    <h1>Сборник индивидуальных домашних заданий по высшей математике</h1>
+    
+    <p class="editor-info">Под общей редакцией доктора физико-математических наук, профессора А.П. Рябушко</p>
+    <p class="author-info">Решил Никулин Александр</p>
+    <br>
+    <div class="rainbow-line"></div>
+    <br><br>
+    <h2>Часть 1</h2>
+    <h3>ИДЗ №:</h3>
+    
+    <div class="idz-link">
+        <a href="idz1_1.html">1.1</a>
+        <!--&emsp;<a href="idz1_1.html">1.2</a>-->
+    </div>
+<br><br>
+    <div class="rainbow-line"></div>
+<br><br>
 </body>
 </html>
-
