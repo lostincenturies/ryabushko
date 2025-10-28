@@ -4,112 +4,103 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Содержание</title>
-<style>
-/* Бегущая радужная полоска */
-.rainbow-line {
-    height: 4px;
-    background: linear-gradient(90deg,
-        #ff0000, #ff4500, #ffa500, 
-        #ffff00, #7fff00, #00ff00,
-        #00ffff, #00bfff, #0000ff,
-        #8000ff, #ff00ff, #ff1493
-    );
-    background-size: 400% 100%;
-    margin: 20px 0;
-    border-radius: 2px;
-    animation: running-rainbow 3s linear infinite;
-    box-shadow: 
-        0 0 10px #fff,
-        0 0 20px #ff00ff,
-        0 0 30px #00ffff;
-}
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-@keyframes running-rainbow {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 400% 50%; }
-}
-
-/* Ссылки */
-a {
-    color: #00BFFF;
-    text-decoration: underline;
-    text-decoration-color: #00BFFF;
-    text-decoration-thickness: 2px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-a:hover {
-    color: #FF6347;
-    text-shadow: 0 0 10px #FF6347;
-}
-
-/* Основные стили */
+/* === ОСНОВНЫЕ СТИЛИ === */
 body {
-    width: 70%;
-    margin: 3% auto 5% auto;
+    width: 90%;
+    margin: 3% auto;
     background: #202020;
     color: #fffacd;
     font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
 }
 
+/* === ТИПОГРАФИКА === */
 h1 {
     text-align: center;
-    font-size: 2.8em;
+    font-size: clamp(1.8em, 4vw, 2.8em);
     color: #00FF00;
-    text-shadow: 
-        0 0 10px #00FF00,
-        0 0 20px #32CD32,
-        0 0 30px #008000;
-    animation: title-glow 3s ease-in-out infinite alternate;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
+    text-shadow: 0 0 10px #00FF00;
+    margin-bottom: 1em;
 }
 
 h2 {
     text-align: center;
-    font-size: 2em;
+    font-size: clamp(1.5em, 3vw, 2em);
     color: #FFD700;
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-    margin: 30px 0 20px 0;
+    margin: 1.5em 0 1em 0;
 }
 
 h3 {
     text-align: center;
-    font-size: 1.5em;
+    font-size: clamp(1.2em, 2.5vw, 1.5em);
     color: #00BFFF;
-    margin: 25px 0 15px 0;
+    margin: 1.2em 0 0.8em 0;
 }
 
-@keyframes title-glow {
-    from {
-        text-shadow: 0 0 10px #00FF00, 0 0 20px #32CD32, 0 0 30px #008000;
-    }
-    to {
-        text-shadow: 0 0 15px #00FF00, 0 0 25px #32CD32, 0 0 35px #008000;
-    }
-}
-
-.center { 
-    width: 100%; 
-    text-align: center; 
-    font-weight: bold; 
-    font-size: 110%; 
+.center {
+    text-align: center;
+    font-weight: bold;
 }
 
 .editor-info, .author-info {
     text-align: center;
     font-style: italic;
     color: #FFD700;
-    font-size: 110%;
-    margin: 10px 0;
-    text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+    margin: 0.5em 0;
 }
 
 .idz-link {
-    font-size: 1.5em;
+    font-size: clamp(1.1em, 2.5vw, 1.5em);
     text-align: center;
-    margin: 20px 0;
+    margin: 1em 0;
+}
+
+/* === АНИМАЦИИ === */
+@keyframes running-rainbow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 400% 50%; }
+}
+
+@keyframes title-glow {
+    from { text-shadow: 0 0 10px #00FF00; }
+    to { text-shadow: 0 0 15px #00FF00; }
+}
+
+/* === КОМПОНЕНТЫ === */
+.rainbow-line {
+    height: 4px;
+    background: linear-gradient(90deg, #ff0000, #ffa500, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff);
+    background-size: 400% 100%;
+    margin: 1.5em 0;
+    border-radius: 2px;
+    animation: running-rainbow 3s linear infinite;
+}
+
+/* === ССЫЛКИ === */
+a {
+    color: #00BFFF;
+    text-decoration: underline;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #FF6347;
+}
+
+/* === АДАПТИВНОСТЬ === */
+@media (max-width: 768px) {
+    body {
+        width: 95%;
+        margin: 5% auto;
+    }
+    
+    .editor-info, .author-info {
+        font-size: 0.9em;
+    }
 }
 </style>
 </head>
