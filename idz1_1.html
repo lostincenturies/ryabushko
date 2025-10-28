@@ -5,23 +5,82 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ИДЗ-1.1</title>
 <style>
-/* Бегущая радужная полоска */
-.rainbow-line {
-    height: 4px;
-    background: linear-gradient(90deg,
-        #ff0000, #ff4500, #ffa500, 
-        #ffff00, #7fff00, #00ff00,
-        #00ffff, #00bfff, #0000ff,
-        #8000ff, #ff00ff, #ff1493
-    );
-    background-size: 400% 100%;
-    margin: 20px 0;
-    border-radius: 2px;
-    animation: running-rainbow 3s linear infinite;
-    box-shadow: 
-        0 0 10px #fff,
-        0 0 20px #ff00ff,
-        0 0 30px #00ffff;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* === ОСНОВНЫЕ СТИЛИ === */
+body {
+    width: 90%;
+    margin: 3% auto;
+    background: #202020;
+    color: #fffacd;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+}
+
+/* === ТИПОГРАФИКА === */
+h1 {
+    text-align: center;
+    font-size: clamp(1.8em, 4vw, 2.5em);
+    color: #00FF00;
+    text-shadow: 0 0 10px #00FF00;
+    margin-bottom: 1.5em;
+}
+
+p {
+    text-indent: 3%;
+    margin: 1em 0;
+}
+
+.center {
+    text-align: center;
+    font-weight: bold;
+}
+
+.no-wrap {
+    white-space: nowrap;
+}
+
+/* === СПИСКИ === */
+.russian-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.russian-list li {
+    margin-bottom: 0.5em;
+    padding-left: 2em;
+    position: relative;
+}
+
+.russian-list li:nth-child(1)::before { content: "а) "; }
+.russian-list li:nth-child(2)::before { content: "б) "; }
+.russian-list li:nth-child(3)::before { content: "в) "; }
+.russian-list li:nth-child(4)::before { content: "г) "; }
+.russian-list li:nth-child(5)::before { content: "д) "; }
+
+/* === АНИМАЦИИ === */
+@keyframes sparkle-gold {
+    0% { 
+        text-shadow: 0 0 4px #ffd700, 0 0 10px #ffa500, 0 0 16px #ff6b00; 
+    }
+    50% { 
+        text-shadow: 0 0 8px #ffeb3b, 0 0 16px #ff9800, 0 0 24px #ff5722; 
+    }
+    100% { 
+        text-shadow: 0 0 4px #ffd700, 0 0 10px #ffa500, 0 0 16px #ff6b00; 
+    }
+}
+
+@keyframes neon-glow {
+    0% { 
+        text-shadow: 0 0 5px #00BFFF, 0 0 10px #00BFFF, 0 0 15px #00BFFF; 
+    }
+    50% { 
+        text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF, 0 0 30px #00FFFF; 
+    }
+    100% { 
+        text-shadow: 0 0 5px #00BFFF, 0 0 10px #00BFFF, 0 0 15px #00BFFF; 
+    }
 }
 
 @keyframes running-rainbow {
@@ -29,10 +88,45 @@
     100% { background-position: 400% 50%; }
 }
 
-/* Ссылки - яркий контрастный цвет */
+@keyframes title-glow {
+    from {
+        text-shadow: 0 0 10px #00BFFF, 0 0 20px #0080FF;
+    }
+    to {
+        text-shadow: 0 0 15px #00FFFF, 0 0 25px #00BFFF;
+    }
+}
+
+/* === КОМПОНЕНТЫ === */
+.us {
+    color: #FFD700;
+    text-align: center;
+    font-weight: normal;
+    margin: 2em 0;
+    font-size: clamp(1em, 3vw, 1.15em);
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+}
+
+.num {
+    font-weight: bold;
+    font-size: clamp(1.1em, 3vw, 1.3em);
+    animation: neon-glow 2s infinite;
+    color: #FFFFFF;
+}
+
+.rainbow-line {
+    height: 4px;
+    background: linear-gradient(90deg, #ff0000, #ffa500, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff);
+    background-size: 400% 100%;
+    margin: 2em 0;
+    border-radius: 2px;
+    animation: running-rainbow 3s linear infinite;
+}
+
+/* === ССЫЛКИ === */
 a {
     color: #00BFFF;
-    text-decoration: underline;  /* Вот оно! */
+    text-decoration: underline;
     text-decoration-color: #00BFFF;
     text-decoration-thickness: 2px;
     font-weight: bold;
@@ -40,80 +134,41 @@ a {
 }
 
 a:hover {
-    color: #FF6347;  /* Томатный при наведении */
+    color: #FF6347;
     text-shadow: 0 0 10px #FF6347;
 }
 
-/* Неоновая анимация для .num */
-@keyframes neon-glow {
-    0% { text-shadow: 0 0 5px #00BFFF, 0 0 10px #00BFFF, 0 0 15px #00BFFF, 0 0 20px #00BFFF; }
-    50% { text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF, 0 0 30px #00FFFF, 0 0 40px #00FFFF; }
-    100% { text-shadow: 0 0 5px #00BFFF, 0 0 10px #00BFFF, 0 0 15px #00BFFF, 0 0 20px #00BFFF; }
-}
-
-.num {
-    font-weight: bold;
-    font-size: 130%;
-    animation: neon-glow 2s infinite;
-    color: #FFFFFF;  /* Белый текст для контраста */
-}
-.russian-list {
-  list-style-type: none;
-  padding-left: 0;
-}
-.russian-list li {
-  margin-bottom: 10px;
-  padding-left: 25px;
-  position: relative;
-}
-.russian-list li:nth-child(1)::before { content: "а) "; }
-.russian-list li:nth-child(2)::before { content: "б) "; }
-.russian-list li:nth-child(3)::before { content: "в) "; }
-.russian-list li:nth-child(4)::before { content: "г) "; }
-.russian-list li:nth-child(5)::before { content: "д) "; }
-
-body {
-    width: 70%;
-    margin: 3% auto 5% auto;
-    background: #202020;
-    color: #fffacd;
-    font-family: 'Montserrat', sans-serif;
-}
-
-h1 {
-    text-align: center;
-    font-size: 2.5em;
-    color: #00FF00;  /* Ярко-зелёный */
-    text-shadow: 
-        0 0 10px #00FF00,
-        0 0 20px #32CD32,
-        0 0 30px #008000;
-    animation: title-glow 3s ease-in-out infinite alternate;
-    margin-bottom: 30px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-@keyframes title-glow {
-    from {
-        text-shadow: 0 0 10px #00BFFF, 0 0 20px #0080FF, 0 0 30px #0040FF;
+/* === АДАПТИВНОСТЬ === */
+@media (max-width: 768px) {
+    body {
+        width: 95%;
+        margin: 5% auto;
     }
-    to {
-        text-shadow: 0 0 15px #00FFFF, 0 0 25px #00BFFF, 0 0 35px #0066FF;
+    
+    p {
+        text-indent: 1em;
+        font-size: 0.9em;
+    }
+    
+    .russian-list li {
+        padding-left: 1.5em;
+        font-size: 0.9em;
+    }
+    
+    .us, .num {
+        margin: 1em 0;
     }
 }
 
-.center {width: 100%; text-align: center; font-weight: bold; font-size: 110%;}
-
-.no-wrap {
-    white-space: nowrap;
-}
-p {text-indent: 3%;}
-.us {
-    font-size: 115%;
-    color: #FFD700;  /* Золотой цвет */
-    /* font-weight: bold;*/
-    text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+@media (max-width: 480px) {
+    .russian-list li::before {
+        position: static;
+        margin-right: 0.5em;
+    }
+    
+    .russian-list li {
+        padding-left: 0;
+    }
 }
 </style>
 <script>
